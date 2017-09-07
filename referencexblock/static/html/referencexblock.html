@@ -1,0 +1,75 @@
+
+<div class="wrapper-comp-settings is-active editor-with-buttons" id="settings-tab">
+  <ul class="list-input settings-list">
+
+    <li class="field comp-setting-entry is-set">
+      <div class="wrapper-comp-setting">
+        <label class="label setting-label" for="module-id">Name:</label>
+        <input type="text" class="module-id input setting-input" id="id_name" value="{{ref_name}}"/>
+
+      </div>
+    </li>
+
+    <li class="field comp-setting-entry is-set">
+      <div class="wrapper-comp-setting">
+
+        <label class="label setting-label" for="module-title">Link:</label>
+        <input type="url" class="module-title input setting-input" id="id_link" value="{{ref_link}}"/>
+      </div>
+    </li>
+
+    <li class="field comp-setting-entry is-set">
+      <div class="wrapper-comp-setting">
+
+        <label class="label setting-label" for="module-description">Description:</label>
+
+        <textarea id="id_description" class="answer editable" cols="20" rows="5" name="input" data-min_characters="0" value="{{ref_description}}"></textarea>
+
+      </div>
+    </li>
+
+    <li class="field comp-setting-entry is-set">
+      <div class="wrapper-comp-setting">
+
+
+        <label class="label setting-label" for="shared-key">Reference type:</label>
+        <select class="shared-key input setting-input" id="id_ref_type" value="{{ref_type}}">
+          <option value="Image">Image</option>
+          <option value="Link">Link</option>
+          <option value="Video">Video</option>
+          <option value="Document">Document</option>
+        </select>
+
+      </div>
+    </li>
+
+    <li class="field comp-setting-entry is-set">
+      <div class="wrapper-comp-setting">
+
+
+        <label class="label setting-label" for="base-url">Reference status:</label>
+
+        <select class="base-url input setting-input" id="id_ref_status" value="{{ref_status}}">
+          <option value="Available">Available</option>
+          <option value="Not Available">Not Available</option>
+
+        </select>
+
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="xblock-actions">
+    <ul>
+      <li class="action-item">
+
+        <button type="submit" id="submit" name="submit" class="button action-primary save-button" onClick="window.location.reload()">Create</button>
+
+      </li>
+      <li class="action-item">
+        <button class="button cancel-button">Cancel</button>
+      </li>
+    </ul>
+  </div>
+</div>
