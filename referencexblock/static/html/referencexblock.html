@@ -1,0 +1,102 @@
+<div class="modal-window modal-editor confirm modal-lg modal-type-schoolyourself_lesson" tabindex="-1" aria-labelledby="modal-window-title" style="top: 402.2px; left: 193px;">
+  <div class="edit-xblock-modal">
+    <div class="modal-header">
+    <h2 id="modal-window-title" class="title modal-window-title">Editing: Reference</h2>
+      <ul class="editor-modes action-list action-modes">
+      </ul>
+    </div>
+    <div class="modal-content">
+      <div class="xblock-editor" data-locator="block-v1:Cuelogic+dj101+dj_101+type@schoolyourself_lesson+block@564a77753d474398979e1a7b72b670bb" data-course-key="course-v1:Cuelogic+dj101+dj_101"><div class="xblock xblock-studio_view xblock-studio_view-schoolyourself_lesson xblock-initialized" data-runtime-class="StudioRuntime" data-init="SchoolYourselfStudioView" data-request-token="434dc65693d011e7817a0800272c61d0" data-runtime-version="1" data-usage-id="block-v1:Cuelogic+dj101+dj_101+type@schoolyourself_lesson+block@564a77753d474398979e1a7b72b670bb" data-block-type="schoolyourself_lesson">
+
+        <div class="wrapper-comp-settings is-active editor-with-buttons" id="settings-tab">
+          <ul class="list-input settings-list">
+
+            <li class="field comp-setting-entry is-set">
+              <div class="wrapper-comp-setting">
+                <label class="label setting-label" for="module-id">Name:</label>
+                <input type="text" class="module-id input setting-input" id="id_name" value="{{ref_name}}"/>
+
+              </div>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+              <div class="wrapper-comp-setting">
+
+                <label class="label setting-label" for="module-title">Link:</label>
+                <input type="url" class="module-title input setting-input" id="id_link" value="{{ref_link}}"/>
+              </div>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+              <div class="wrapper-comp-setting">
+
+                <label class="label setting-label" for="module-description">Description:</label>
+
+                <textarea id="id_description" class="answer editable" cols="20" rows="5" name="input" data-min_characters="0" value="{{ref_description}}"></textarea>
+
+              </div>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+              <div class="wrapper-comp-setting">
+
+
+                <label class="label setting-label" for="shared-key">Reference type:</label>
+                <select class="shared-key input setting-input" id="id_ref_type" value="{{ref_type}}">
+                  <option value="Image">Image</option>
+                  <option value="Link">Link</option>
+                  <option value="Video">Video</option>
+                  <option value="Document">Document</option>
+                </select>
+
+              </div>
+            </li>
+
+            <li class="field comp-setting-entry is-set">
+              <div class="wrapper-comp-setting">
+
+
+                <label class="label setting-label" for="base-url">Reference status:</label>
+
+                <select class="base-url input setting-input" id="id_ref_status" value="{{ref_status}}">
+                  <option value="Available">Available</option>
+                  <option value="Not Available">Not Available</option>
+
+                </select>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <div class="xblock-actions">
+            <ul>
+              <li class="action-item">
+
+                <button type="submit" id="submit" name="submit" class="button action-primary save-button" onClick="window.location.reload()">Create</button>
+
+              </li>
+              <li class="action-item">
+                <button class="button cancel-button">Cancel</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-actions" style="display: none;">
+    <h3 class="sr">Actions</h3>
+    <ul>
+      <li class="action-item">
+        <a href="#" class="button action-primary action-save">Save</a>
+      </li>
+      <li class="action-item">
+        <a href="#" class="button  action-cancel">Cancel</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
