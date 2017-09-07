@@ -1,0 +1,62 @@
+<div class="" id="reference-block">
+  <ol class="list-input">
+
+    <li class="field">
+      <div class="">
+        <label class="label" for="module-id">Name:</label>
+        <input type="text" class="module-id input setting-input" id="id_name" value="${ref_name}"/>
+      </div>
+    </li>
+
+    <li class="field">
+      <div class="">
+        <label class="label" for="module-title">Link:</label>
+        <input type="url" class="module-title input setting-input" id="id_link" value="${ref_link}"/>
+      </div>
+    </li>
+
+    <li class="field">
+      <div class="">
+        <label class="label" for="module-description">Description:</label>
+        <input type="text" class="module-description input setting-input" id="id_description" value="${ref_description}"/>
+      </div>
+    </li>
+
+    <li class="field">
+      <div class="">
+        <label class="label" for="shared-key">Reference type:</label>
+		<select id="id_ref_type" value="${ref_type}">
+		  <option value="Image">Image</option>
+		  <option value="Link">Link</option>
+		  <option value="Video">Video</option>
+		  <option value="Document">Document</option>
+		</select>
+      </div>
+    </li>
+
+    <li class="field">
+      <div class="">
+        <label class="label" for="base-url">Reference status:</label>
+
+		<select id="id_ref_status" value="${ref_status}">
+		  <option value="Available">Available</option>
+		  <option value="Not Available">Not Available</option>
+
+		</select>
+
+      </div>
+    </li>
+
+  </ol>
+
+  <div class="xblock-actions">
+    <ol>
+      <li class="action-item">
+        <button type="submit" id="submit" name="submit" class="button action-primary save-button">Create</button>
+      </li>
+      <li class="action-item">
+        <button class="button cancel-button">Cancel</button>
+      </li>
+    </ol>
+  </div>
+</div>
