@@ -60,18 +60,18 @@ class ReferenceXBlock(XBlock):
         'ref_status': self.ref_status,
         'title':self.ref_name
         }
-        # fragment = Fragment()
-        # fragment.add_content(loader.render_template('static/html/referenceview.html', context))
-        # fragment.add_css(self.resource_string("static/css/referencexblock.css"))
-        # return fragment   
-
-
-        fragment = Fragment(loader.render_template("static/html/referencexblock.html", context))
+        fragment = Fragment()
+        fragment.add_content(loader.render_template('static/html/referenceview.html', context))
         fragment.add_css(self.resource_string("static/css/referencexblock.css"))
-        fragment.add_javascript(
-        self.resource_string("static/js/src/referencexblock.js"))
-        fragment.initialize_js("ReferenceXBlock")
-        return fragment
+        return fragment   
+
+
+        # fragment = Fragment(loader.render_template("static/html/referencexblock.html", context))
+        # fragment.add_css(self.resource_string("static/css/referencexblock.css"))
+        # fragment.add_javascript(
+        # self.resource_string("static/js/src/referencexblock.js"))
+        # fragment.initialize_js("ReferenceXBlock")
+        # return fragment
 
 
     """
