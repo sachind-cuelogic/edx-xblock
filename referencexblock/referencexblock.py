@@ -17,12 +17,26 @@ class ReferenceXBlock(XBlock):
 
     # Fields are defined on the class.  You can access them in your code as
     # self.<fieldname>.
-
+    display_name = String(
+      help="The display name of this component.",
+      scope=Scope.settings,
+      default="",
+      display_name="The display name of this component")
     ref_name = String(display_name = "Reference Name", default=None, scope=Scope.content)
     ref_link = String(display_name = "Reference Link", help="Reference link", default=None, scope=Scope.content)
     ref_description = String(display_name = "Reference Description", help="Reference Description", default=None, scope=Scope.content)
     ref_type = String(display_name = "Reference Type", default=None, scope=Scope.content)
     ref_status = String(display_name = "Reference Status", help="Reference Name", default=None, scope=Scope.content)
+
+
+    def get_display_name(self, ref_name):
+      """
+      This method generates a string that is usable as the display name
+      for the component, using the module title (such as "Lines and Rays").
+      By default, we just return the module title, but subclasses might
+      want to do something more specific.
+      """
+      return ref_name
 
 
     def resource_string(self, path):
@@ -46,18 +60,18 @@ class ReferenceXBlock(XBlock):
         'ref_status': self.ref_status,
         'title':self.ref_name
         }
-        fragment = Fragment()
-        fragment.add_content(loader.render_template('static/html/referenceview.html', context))
-        fragment.add_css(self.resource_string("static/css/referencexblock.css"))
-        return fragment   
-
-
-        # fragment = Fragment(loader.render_template("static/html/referencexblock.html", context))
+        # fragment = Fragment()
+        # fragment.add_content(loader.render_template('static/html/referenceview.html', context))
         # fragment.add_css(self.resource_string("static/css/referencexblock.css"))
-        # fragment.add_javascript(
-        # self.resource_string("static/js/src/referencexblock.js"))
-        # fragment.initialize_js("ReferenceXBlock")
-        # return fragment
+        # return fragment   
+
+
+        fragment = Fragment(loader.render_template("static/html/referencexblock.html", context))
+        fragment.add_css(self.resource_string("static/css/referencexblock.css"))
+        fragment.add_javascript(
+        self.resource_string("static/js/src/referencexblock.js"))
+        fragment.initialize_js("ReferenceXBlock")
+        return fragment
 
 
     """
@@ -100,7 +114,7 @@ class ReferenceXBlock(XBlock):
         self.ref_type = data['ref_type']
         self.ref_description = data['ref_description']
         self.ref_status = data['ref_status']
-
+        self.display_name = self.get_display_name(self.ref_name)
 
         return {"result": "success"}
         

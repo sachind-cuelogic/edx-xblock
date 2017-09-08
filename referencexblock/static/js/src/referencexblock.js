@@ -24,7 +24,7 @@ function ReferenceXBlock(runtime, element) {
             }),
             success: function(result) 
             {
-                window.location.reload(false);
+
             }
         });
 
