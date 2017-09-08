@@ -1,0 +1,15 @@
+{% autoescape off %}
+<h2>References</h2>
+<div class="reference-view">
+	<label>Reference Name:</label>
+    <p>{{ref_name}}</p>
+    <label>Reference Link:</label>
+    <a href="{{ref_link}}" rel="external">For more information click here</a>
+    <label>Reference Description:</label>
+    <p>{{ref_description}}</p>
+    <label>Reference Type:</label>    
+    <p>{{ref_type}}</p>
+    <label>Reference Status:</label>
+    <p>{{ref_status}}</p>
+</div>
+{% endautoescape %}
