@@ -1,0 +1,12 @@
+paragraphxblock/__init__.py
+paragraphxblock/paragraphxblock.py
+paragraphxblock/static/README.txt
+paragraphxblock/static/css/paragraphxblock.css
+paragraphxblock/static/html/paragraphxblock.html
+paragraphxblock/static/js/src/paragraphxblock.js
+paragraphxblock_xblock.egg-info/PKG-INFO
+paragraphxblock_xblock.egg-info/SOURCES.txt
+paragraphxblock_xblock.egg-info/dependency_links.txt
+paragraphxblock_xblock.egg-info/entry_points.txt
+paragraphxblock_xblock.egg-info/requires.txt
+paragraphxblock_xblock.egg-info/top_level.txt

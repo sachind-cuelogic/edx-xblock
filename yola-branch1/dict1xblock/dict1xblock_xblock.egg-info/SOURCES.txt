@@ -1,0 +1,12 @@
+dict1xblock/__init__.py
+dict1xblock/dict1xblock.py
+dict1xblock/static/README.txt
+dict1xblock/static/css/dict1xblock.css
+dict1xblock/static/html/dict1xblock.html
+dict1xblock/static/js/src/dict1xblock.js
+dict1xblock_xblock.egg-info/PKG-INFO
+dict1xblock_xblock.egg-info/SOURCES.txt
+dict1xblock_xblock.egg-info/dependency_links.txt
+dict1xblock_xblock.egg-info/entry_points.txt
+dict1xblock_xblock.egg-info/requires.txt
+dict1xblock_xblock.egg-info/top_level.txt

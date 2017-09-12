@@ -1,0 +1,14 @@
+/* CSS for ParagraphXBlock */
+
+.paragraphxblock_block .count {
+    font-weight: bold;
+}
+
+.paragraphxblock_block p {
+    cursor: pointer;
+}
+
+ol li{
+	padding-bottom: 5px;
+	
+}
