@@ -1,0 +1,14 @@
+<div class="paragraph-div">
+	<h2>Paragraph : {{paragraph.lesson_name}} </h2>
+	{% if paragraph.paragraph%}
+	<div class="paragraph">
+		{{paragraph.paragraph}}
+	</div>
+	{% else %}
+	<div class="not-paragraph">
+		<p>There is not paragraph in {{paragraph.lesson_name}}.</p>
+	</div>
+
+	{% endif %}
+	<br><br>
+</div>

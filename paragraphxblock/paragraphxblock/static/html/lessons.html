@@ -1,0 +1,14 @@
+<div class="lessons">
+	<h2>Available lessons of {{course.course_name}} : </h2>
+
+	<ol>
+		{% for pt in lessons_list %}
+		<li>
+
+			<a id="{{pt.id}}" href="/scenario/{{scenario_id}}/{{pt.id}}/?lesson_id={{pt.id}}"><strong> {{pt.lesson_name}}</strong></a>
+
+		</li>
+		{% endfor %}
+
+	</ol>
+</div>

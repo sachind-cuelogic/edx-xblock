@@ -1,3 +1,0 @@
-[xblock.v1]
-dict1xblock = dict1xblock:Dict1XBlock
-

@@ -1,0 +1,12 @@
+<div class="courses-div">
+
+<h2>Course List : </h2>
+<ol class="courses">
+	{% for pt in course_list %}
+	<li>
+		<a id="{{pt.id}}" href="/scenario/{{scenario_id}}/{{pt.id}}/?course_id={{pt.id}}"><strong> {{pt.course_name}}</strong></a>
+	</li>
+	{% endfor %}
+
+</ol>
+</div>
