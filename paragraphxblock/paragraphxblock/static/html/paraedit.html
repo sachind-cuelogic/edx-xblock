@@ -1,4 +1,7 @@
 <div class="add-paragraph">
+		<h1> Lesson : {{paragraph.lesson_name}}</h1>
+	<div class="hide-para">
+	<input type="hidden" id="{{paragraph.id}}" value="" name="">
 	<h2>Add Paragraph for {{paragraph.lesson_name}} lesson</h2>
 	<div class="paragraph">
 		<textarea id="{{paragraph.id}}" rows="10" cols="50" id="para" placeholder="Add paragraph...">{{paragraph.paragraph}}</textarea>
@@ -7,7 +10,35 @@
 		<button class="submit btn-success submit-btn">save</button>
 		<input type="button" class="cancel btn-success" value="Cancel"/>
 	</div>
+	</div>
+
+	<div class="show-paragraph">
+		<h4>Paragraph :</h4>
+		<p class="updated-para" id="updated-para">{{paragraph.paragraph}} </p>
+	</div>
+
 </div>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <label>keyword: <span>*</span></label>
+<br/>
+<input value="" cols="30" type="text" id="keyword" placeholder="keyword" readonly/><br/>
+<br/>
+<label>Defination: <span>*</span></label>
+<br/>
+<input rows="10" cols="30" id="defination" placeholder="defination of above word" /><br><br><br><br>
+<button id="submit-key" class="btn-success">save</button>
+<input type="button" class="btn-success" id="reset" value="Reset"/>
+  </div>
+
+</div>
+
 
 
 <!-- 

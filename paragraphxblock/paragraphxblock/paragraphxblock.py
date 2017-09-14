@@ -156,6 +156,10 @@ class ParagraphXBlock(XBlock):
             'view':  context['view'] 
             }
             frag.add_css(self.resource_string("static/css/paraedit.css"))
+            # frag.add_css(self.resource_string("static/css/bootstrap.min.css"))
+            # frag.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
+            frag.add_javascript(self.resource_string("static/js/src/popup.js"))
+            frag.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
             frag.add_javascript(self.resource_string("static/js/src/paraedit.js"))
             frag.initialize_js('EditParagraphXBlock',json_args=settings)  
 
@@ -195,26 +199,14 @@ class ParagraphXBlock(XBlock):
 
             frag = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
             frag.add_css(self.resource_string("static/css/paragraphxblock.css"))
+            frag.add_css(self.resource_string("static/css/bootstrap.min.css"))
             frag.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
+            frag.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
+            frag.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
             frag.initialize_js('ParagraphXBlock',json_args=settings)
         
         
         return frag 
-
-
-
-    # TO-DO: change this handler to perform your own actions.  You may need more
-    # than one handler, or you may not need any handlers at all.
-    @XBlock.json_handler
-    def increment_count(self, data, suffix=''):
-        """
-        An example handler, which increments the data.
-        """
-        # Just to show data coming in...
-        assert data['hello'] == 'world'
-
-        self.count += 1
-        return {"count": self.count}
 
 
     @XBlock.json_handler
@@ -225,7 +217,39 @@ class ParagraphXBlock(XBlock):
         lesson=Lessons.objects.get(id=data["lesson_id"]);
         lesson.paragraph=data["paragraph"]
         lesson.save();
-        return {"result":"success"}
+
+        para_dict ={
+            'new_para':lesson.paragraph
+        }
+        updated_para = json.dumps(para_dict)
+
+        return json.loads(updated_para)
+
+    @XBlock.json_handler
+    def get_keyword(self, data, suffix=''):
+        
+        lesson=Lessons.objects.get(pk=data["lesson_id"])
+        try:
+            key=KeyDefinition.objects.get(lesson=lesson,keyword=data["keyword"].lower())
+        except KeyDefinition.DoesNotExist:
+            key = None
+        if key:             
+             return {"key_defination":key.defination}
+        else:
+            return {"key_defination":"none"}   
+
+    @XBlock.json_handler
+    def post_keyword(self, data, suffix=''):
+        # import pdb; pdb.set_trace()
+        lesson=Lessons.objects.get(pk=data["lesson_id"])  
+        try:
+            key=KeyDefinition.objects.get(lesson=lesson,keyword=data["keyword"].lower())
+            key.defination=data["defination"]
+            
+        except KeyDefinition.DoesNotExist:            
+            key =KeyDefinition(lesson=lesson,keyword=data["keyword"].lower(),defination=data["defination"])
+        key.save()
+        return {"keyword":data["keyword"]}
 
 
     # TO-DO: change this to create the scenarios you'd like to see in the
