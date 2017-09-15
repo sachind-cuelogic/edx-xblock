@@ -84,3 +84,6 @@ img{
     text-decoration: none;
     cursor: pointer;
 }
+.hide-para{
+    border-bottom: 1px solid #ccc;
+}

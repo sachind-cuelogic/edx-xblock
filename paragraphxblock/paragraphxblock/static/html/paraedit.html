@@ -4,7 +4,7 @@
 	<input type="hidden" id="{{paragraph.id}}" value="" name="">
 	<h2>Add Paragraph for {{paragraph.lesson_name}} lesson</h2>
 	<div class="paragraph">
-		<textarea id="{{paragraph.id}}" rows="10" cols="50" id="para" placeholder="Add paragraph...">{{paragraph.paragraph}}</textarea>
+		<textarea id="{{paragraph.id}}" class="para-textarea" rows="10" cols="50" placeholder="Add paragraph...">{{paragraph.paragraph}}</textarea>
 	</div>
 	<div class="action-btn">
 		<button class="submit btn-success submit-btn">save</button>
@@ -16,6 +16,7 @@
 		<h4>Paragraph :</h4>
 		<p class="updated-para" id="updated-para">{{paragraph.paragraph}} </p>
 	</div>
+
 
 </div>
 

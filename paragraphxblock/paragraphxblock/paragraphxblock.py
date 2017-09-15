@@ -22,22 +22,15 @@ class ParagraphXBlock(XBlock):
         data = pkg_resources.resource_string(__name__, path)
         return data.decode("utf8")
 
-    # TO-DO: change this view to display your data your own way.
     def student_view(self, context=None):
         """
         The primary view of the ParagraphXBlock, shown to students
         when viewing courses.
         """
-        # import pdb; pdb.set_trace()
-
-        print "context==>", context
-
         if context['course_id']:
-            print "inside course"
-
             lessons_list = Lessons.objects.filter(course=context['course_id'])
-            course = Course.objects.get(id=context['course_id'])
-            context = {
+            course       = Course.objects.get(id=context['course_id'])
+            context      = {
             'lessons_list': lessons_list,
             'course':course,
             'scenario_id': context['scenario_id'],
@@ -45,129 +38,58 @@ class ParagraphXBlock(XBlock):
             'lesson_id': context['lesson_id'],
             'view':  context['view'] 
             }
+            fragment     = Fragment(loader.render_template("static/html/lessons.html", context))
 
-            frag = Fragment(loader.render_template("static/html/lessons.html", context))
-            # html = self.resource_string("static/html/lessons.html")
-            # frag = Fragment(html.format(self=self))
-            settings = {
-            'scenario_id': context['scenario_id'],
-            'course_id': context['course_id'],
-            'lesson_id': context['lesson_id'],
-            'view':  context['view'] 
-            }            
-            
         elif context['lesson_id']:
-            print "inside lesson"
-
             paragraph = Lessons.objects.get(id=context['lesson_id'])
-
-            context = {
+            context   = {
             'paragraph': paragraph,
             'scenario_id': context['scenario_id'],
             'course_id': context['course_id'],
             'view':  context['view'] 
             }
+            fragment  = Fragment(loader.render_template("static/html/paragraph.html", context))            
+            fragment.initialize_js('AddParagraphXBlock')
 
-            frag = Fragment(loader.render_template("static/html/paragraph.html", context))
-
-            # html = self.resource_string("static/html/paragraph.html")
-            # frag = Fragment(html.format(self=self))
-            settings = {
-            'scenario_id': context['scenario_id'],
-            'course_id': context['course_id'],
-            'view':  context['view'] 
-            }
-
-            # frag.add_css(self.resource_string("static/css/paragraph.css"))
-            
-            frag.initialize_js('AddParagraphXBlock',json_args=settings)
-
-        else : 
-
-            settings = {
-            'scenario_id': context['scenario_id'],
-            'view':  context['view'] 
-            }
-
-            # print "sc id==>",context['scenario_id']
-
+        else: 
             course_list = Course.objects.all()
-            context = {
+            context     = {
             'course_list': course_list,
             'scenario_id': context['scenario_id']
             }
+            fragment    = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
 
-            frag = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
-            # html = self.resource_string("static/html/paragraphxblock.html")
-            # frag = Fragment(html.format(self=self))
+        fragment.add_css(self.resource_string("static/css/paragraphxblock.css"))
+        fragment.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
+        fragment.add_javascript(self.resource_string("static/js/src/add_paragraph.js"))
+        fragment.initialize_js('ParagraphXBlock')
+        return fragment
 
-        # course_list = Course.objects.all()
-
-        # context = {
-        # 'course_list': course_list
-        # }
-
-        # settings = {
-        #     'view':  context['view'] 
-        #     }    
-        # print "view==>",settings
-        # print "course id==>",context['course_id']
-        # html = self.resource_string("static/html/paragraphxblock.html")
-        # frag = Fragment(html.format(self=self))
-        frag.add_css(self.resource_string("static/css/paragraphxblock.css"))
-        frag.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
-        frag.add_javascript(self.resource_string("static/js/src/add_paragraph.js"))
-        frag.initialize_js('ParagraphXBlock')
-        return frag
-
-        # fragment = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
-        # fragment.add_css(self.resource_string("static/css/paragraphxblock.css"))
-        # fragment.add_javascript(
-        # self.resource_string("static/js/src/paragraphxblock.js"))
-        # fragment.initialize_js("ParagraphXBlock", json_args=settings)
-        # return fragment
 
     def studio_view(self, context):
         """
         Editing view in Studio
         """
         if context['lesson_id']:
-
-
-
             paragraph = Lessons.objects.get(id=context['lesson_id'])
-
             context = {
             'paragraph': paragraph,
             'scenario_id': context['scenario_id'],
             'course_id': context['course_id'],
             'view':  context['view'] 
             }
-
-            frag = Fragment(loader.render_template("static/html/paraedit.html", context))
-            frag.add_css(self.resource_string("static/css/paraedit.css"))
-
-            # html = self.resource_string("static/html/paraedit.html")
-            # frag = Fragment(html.format(self=self))
-            settings = {
-            'scenario_id': context['scenario_id'],
-            'course_id': context['course_id'],
-            # 'lesson_id': context['lesson_id'],
-            'view':  context['view'] 
-            }
-            frag.add_css(self.resource_string("static/css/paraedit.css"))
-            # frag.add_css(self.resource_string("static/css/bootstrap.min.css"))
-            # frag.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
-            frag.add_javascript(self.resource_string("static/js/src/popup.js"))
-            frag.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
-            frag.add_javascript(self.resource_string("static/js/src/paraedit.js"))
-            frag.initialize_js('EditParagraphXBlock',json_args=settings)  
+            fragment = Fragment(loader.render_template("static/html/paraedit.html", context))
+            fragment.add_css(self.resource_string("static/css/paraedit.css"))
+            # fragment.add_javascript(self.resource_string("static/js/src/popup.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/paraedit.js"))
+            fragment.initialize_js('EditParagraphXBlock')  
 
             
         elif context['course_id']:
             lessons_list = Lessons.objects.filter(course=context['course_id'])
-            course = Course.objects.get(id=context['course_id'])
-            context = {
+            course       = Course.objects.get(id=context['course_id'])
+            context      = {
             'lessons_list': lessons_list,
             'course':course,
             'scenario_id': context['scenario_id'],
@@ -175,85 +97,107 @@ class ParagraphXBlock(XBlock):
             'lesson_id': context['lesson_id'],
             'view':  context['view'] 
             }
-
-            frag = Fragment(loader.render_template("static/html/lessons.html", context))
-            frag.add_css(self.resource_string("static/css/paragraphxblock.css"))
-            settings = {
-            'scenario_id': context['scenario_id'],
-            'course_id': context['course_id'],
-            'view':  context['view'] 
-            }
-            frag.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
-            frag.initialize_js('ParagraphXBlock',json_args=settings)
+            fragment = Fragment(loader.render_template("static/html/lessons.html", context))
+            fragment.add_css(self.resource_string("static/css/paragraphxblock.css"))
+            fragment.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
+            fragment.initialize_js('ParagraphXBlock')
 
         else : 
-            settings = {
-            'scenario_id': context['scenario_id'],
-            'view':  context['view'] 
-            }
             course_list = Course.objects.all()
             context = {
             'course_list': course_list,
             'scenario_id': context['scenario_id']
             }
-
-            frag = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
-            frag.add_css(self.resource_string("static/css/paragraphxblock.css"))
-            frag.add_css(self.resource_string("static/css/bootstrap.min.css"))
-            frag.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
-            frag.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
-            frag.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
-            frag.initialize_js('ParagraphXBlock',json_args=settings)
+            fragment = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
+            fragment.add_css(self.resource_string("static/css/paragraphxblock.css"))
+            fragment.add_css(self.resource_string("static/css/bootstrap.min.css"))
+            fragment.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
+            fragment.initialize_js('ParagraphXBlock')
         
-        
-        return frag 
+        return fragment 
 
 
     @XBlock.json_handler
-    def post_paragraph_studio(self, data, suffix=''):
+    def post_paragraph(self, data, suffix=''):
 
-        # import pdb; pdb.set_trace()
-        print "lesonid==>",data["lesson_id"]
-        lesson=Lessons.objects.get(id=data["lesson_id"]);
-        lesson.paragraph=data["paragraph"]
-        lesson.save();
+        lesson           = Lessons.objects.get(id=data["lesson_id"]);
+        lesson.paragraph = data["paragraph"]
+        para             = (lesson.paragraph).replace(" ","")
+        if(para):
+            lesson.save();
+            para_dict    = {'new_para':lesson.paragraph}
+            updated_para = json.dumps(para_dict)
+            return json.loads(updated_para)
+        
+        else:
+            return {"result": "fail"}
 
-        para_dict ={
-            'new_para':lesson.paragraph
-        }
-        updated_para = json.dumps(para_dict)
-
-        return json.loads(updated_para)
 
     @XBlock.json_handler
     def get_keyword(self, data, suffix=''):
+
+        lesson = Lessons.objects.get(pk=data["lesson_id"])
         
-        lesson=Lessons.objects.get(pk=data["lesson_id"])
         try:
-            key=KeyDefinition.objects.get(lesson=lesson,keyword=data["keyword"].lower())
+            key = KeyDefinition.objects.get(lesson=lesson, keyword=data["keyword"].lower())
         except KeyDefinition.DoesNotExist:
             key = None
+
         if key:             
-             return {"key_defination":key.defination}
+            return {"key_defination":key.defination, "keyword":key.keyword}
         else:
             return {"key_defination":"none"}   
 
+
     @XBlock.json_handler
     def post_keyword(self, data, suffix=''):
-        # import pdb; pdb.set_trace()
-        lesson=Lessons.objects.get(pk=data["lesson_id"])  
+
+        lesson  = Lessons.objects.get(pk=data["lesson_id"])  
         try:
-            key=KeyDefinition.objects.get(lesson=lesson,keyword=data["keyword"].lower())
-            key.defination=data["defination"]
+            key = KeyDefinition.objects.get(lesson=lesson, keyword=data["keyword"].lower())
+            key.defination = data["defination"]
             
         except KeyDefinition.DoesNotExist:            
-            key =KeyDefinition(lesson=lesson,keyword=data["keyword"].lower(),defination=data["defination"])
+            key =KeyDefinition(lesson=lesson, 
+                                keyword=data["keyword"].lower(), 
+                                defination=data["defination"])
         key.save()
         return {"keyword":data["keyword"]}
 
 
-    # TO-DO: change this to create the scenarios you'd like to see in the
-    # workbench while developing your XBlock.
+    @XBlock.json_handler
+    def update_highlighted_keys(self, data, suffix=''):
+
+        paragraph         = Lessons.objects.get(id=data["lesson_id"])
+        keywords          = KeyDefinition.objects.filter(lesson=data["lesson_id"])
+        keys              = []
+        for i in keywords:
+            key           = {}
+            key["keyword"]= i.keyword
+            keys.append(key)
+        return {"paragraph":paragraph.paragraph,"keys":keys}
+
+
+    @XBlock.json_handler
+    def post_paragraph_student(self, data, suffix=''): 
+           
+        para     = Lessons.objects.get(course=data["course_id"],id=data["lesson_id"])
+        keywords = KeyDefinition.objects.filter(lesson=data["lesson_id"])
+        keys     = []
+
+        for i in keywords:
+            key               = {}
+            key["keyword"]    = i.keyword
+            key["definition"] = i.defination
+            keys.append(key)
+
+        paragraphs              = {}
+        paragraphs["paragraph"] = para.paragraph
+        return {"paragraph":paragraphs,"keys":keys} 
+
+
     @staticmethod
     def workbench_scenarios():
         """A canned scenario for display in the workbench."""

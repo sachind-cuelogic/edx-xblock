@@ -1,7 +1,7 @@
 <div class="paragraph-div">
 	<h2>Paragraph : {{paragraph.lesson_name}} </h2>
 	{% if paragraph.paragraph%}
-	<div class="paragraph">
+	<div id="{{paragraph.id}}" class="paragraph">
 		<p> {{paragraph.paragraph}}</p>
 	</div>
 	{% else %}
@@ -11,4 +11,25 @@
 
 	{% endif %}
 	<br><br>
+</div>
+
+<!-- popup modal for keyword and definition  -->
+
+<div id="myModal" class="modal">
+<div class="modal-header">
+	<span class="close">&times;</span>
+	<label> Definitin of word </label>
+</div>
+	<div class="modal-content">
+		<div class="keydef">
+			<div class="keyword-block">
+				<label>keyword: </label>
+				<input id="keyword" readonly/>
+			</div>
+			<div class="definition-block">
+				<label>Defination: </label>
+				<input id="defination" readonly/>
+			</div>
+		</div>
+	</div>
 </div>
