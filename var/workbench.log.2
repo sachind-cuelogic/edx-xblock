@@ -1,0 +1,298 @@
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+"POST /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/?student=student_1& HTTP/1.1" 500 19528
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+(0.001) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+"POST /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/?student=student_1& HTTP/1.1" 500 19514
+(0.000) SELECT "workbench_course"."id", "workbench_course"."course_name" FROM "workbench_course" WHERE "workbench_course"."id" = 3; args=(3,)
+(0.000) SELECT "workbench_lessons"."id", "workbench_lessons"."course_id", "workbench_lessons"."lesson_name", "workbench_lessons"."paragraph" FROM "workbench_lessons" INNER JOIN "workbench_course" ON ("workbench_lessons"."course_id" = "workbench_course"."id") WHERE "workbench_lessons"."course_id" = 3 ORDER BY "workbench_course"."course_name" ASC, "workbench_lessons"."lesson_name" ASC, "workbench_lessons"."paragraph" ASC; args=(3,)
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+"GET /scenario/paragraphxblock.0/3/?course_id=3 HTTP/1.1" 200 12285
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+(0.001) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+"POST /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/?student=student_1& HTTP/1.1" 500 19528
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+"POST /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/?student=student_1& HTTP/1.1" 500 19514
+(0.001) SELECT "workbench_course"."id", "workbench_course"."course_name" FROM "workbench_course" WHERE "workbench_course"."id" = 2; args=(2,)
+(0.000) SELECT "workbench_lessons"."id", "workbench_lessons"."course_id", "workbench_lessons"."lesson_name", "workbench_lessons"."paragraph" FROM "workbench_lessons" INNER JOIN "workbench_course" ON ("workbench_lessons"."course_id" = "workbench_course"."id") WHERE "workbench_lessons"."course_id" = 2 ORDER BY "workbench_course"."course_name" ASC, "workbench_lessons"."lesson_name" ASC, "workbench_lessons"."paragraph" ASC; args=(2,)
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.001) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+"GET /scenario/paragraphxblock.0/2/?course_id=2 HTTP/1.1" 200 12281
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+(0.001) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+"POST /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/?student=student_1& HTTP/1.1" 500 19528
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
+(0.001) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', u'paragraphxblock', u'paragraphxblock.paragraphxblock.d0.u0', u'paragraphxblock')
+"POST /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/?student=student_1& HTTP/1.1" 500 19514
+(0.000) SELECT "workbench_course"."id", "workbench_course"."course_name" FROM "workbench_course" WHERE "workbench_course"."id" = 1; args=(1,)
+(0.000) SELECT "workbench_lessons"."id", "workbench_lessons"."course_id", "workbench_lessons"."lesson_name", "workbench_lessons"."paragraph" FROM "workbench_lessons" INNER JOIN "workbench_course" ON ("workbench_lessons"."course_id" = "workbench_course"."id") WHERE "workbench_lessons"."course_id" = 1 ORDER BY "workbench_course"."course_name" ASC, "workbench_lessons"."lesson_name" ASC, "workbench_lessons"."paragraph" ASC; args=(1,)
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'parent' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'parent', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+(0.000) SELECT "workbench_xblockstate"."id", "workbench_xblockstate"."scope", "workbench_xblockstate"."scope_id", "workbench_xblockstate"."user_id", "workbench_xblockstate"."scenario", "workbench_xblockstate"."tag", "workbench_xblockstate"."created", "workbench_xblockstate"."state" FROM "workbench_xblockstate" WHERE ("workbench_xblockstate"."scope" = 'usage' AND "workbench_xblockstate"."tag" = 'paragraphxblock' AND "workbench_xblockstate"."scope_id" = 'paragraphxblock.paragraphxblock.d0.u0' AND "workbench_xblockstate"."scenario" = 'paragraphxblock' AND "workbench_xblockstate"."user_id" IS NULL); args=(u'usage', 'paragraphxblock', 'paragraphxblock.paragraphxblock.d0.u0', 'paragraphxblock')
+"GET /scenario/paragraphxblock.0/1/?course_id=1 HTTP/1.1" 200 12278
+Internal Server Error: /handler/paragraphxblock.paragraphxblock.d0.u0/update_highlighted_keys/
+Traceback (most recent call last):
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/sachin/Desktop/paraxblock/xblock-sdk/workbench/views.py", line 130, in handler
+    result = block.runtime.handle(block, handler_slug, request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/runtime.py", line 1029, in handle
+    results = handler(request, suffix)
+  File "/home/sachin/Desktop/paraxblock/paraxenv/local/lib/python2.7/site-packages/xblock/mixins.py", line 68, in wrapper
+    response = func(self, request_json, suffix)
+  File "/home/sachin/Desktop/paraxblock/paragraphxblock/paragraphxblock/paragraphxblock.py", line 173, in update_highlighted_keys
+    paragraph         = Lessons.objects.get(id=data["lesson_id"])
+KeyError: 'lesson_id'
