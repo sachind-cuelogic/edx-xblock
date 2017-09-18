@@ -16,7 +16,7 @@ function divideparagraph_inword(runtime, element) {
 
     $(".word").click(function(event) {
         key = event.target.innerHTML;
-        getkeywordstatus(runtime, element, key);
+/*        getkeywordstatus(runtime, element, key);*/
     });
 
     var span = document.getElementsByClassName("close")[0];
@@ -30,7 +30,7 @@ function divideparagraph_inword(runtime, element) {
     }
 }
 
-
+/*
 function getkeywordstatus(runtime, element, key) {
     var modal = document.getElementById('myModal');
     var handlerUrlc = runtime.handlerUrl(element, 'get_keyword');
@@ -59,7 +59,7 @@ function getkeywordstatus(runtime, element, key) {
     });
 
 
-}
+}*/
 
 
 function ParagraphXBlock(runtime, element) {
@@ -82,7 +82,13 @@ function ParagraphXBlock(runtime, element) {
                 var keys = result.keys
                 for (i = 0; i < keys.length; i++) {
                     var key = keys[i].keyword.toLowerCase();
+                    var def = keys[i].defination
                     $("[key-word='" + key + "']").css("color", "red");
+                    $("[key-word='" + key + "']").attr('title',def);
+                    $("[key-word='" + key + "']").tooltipster({
+                                                    theme: 'tooltipster-punk'
+                    });
+
                 }
             });
           

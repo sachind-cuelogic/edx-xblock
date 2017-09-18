@@ -1,7 +1,7 @@
 
 function divide_paragraph_inwords(runtime, element) {
 
-    var p = $('p#updated-para');
+    var p = $('p#new-para');
     var modal = document.getElementById('myModal');
 
     p.html(function(index, oldHtml) {
@@ -17,7 +17,6 @@ function divide_paragraph_inwords(runtime, element) {
         $('#keyword').val(key)
         getkeywordstatus(runtime, element, key);
         modal.style.display = "block";
-
     });
 
     var span = document.getElementsByClassName("close")[0];
@@ -35,7 +34,7 @@ function divide_paragraph_inwords(runtime, element) {
 function getkeywordstatus(runtime, element, key) {
 
     var handlerUrlc = runtime.handlerUrl(element, 'get_keyword');
-    var lesson_id = $('textarea').attr('id')
+    var lesson_id = $('.add-paragraph input').attr('id')
     $.ajax({
         type: "POST",
         url: handlerUrlc,
@@ -59,7 +58,7 @@ function getkeywordstatus(runtime, element, key) {
 
 function update_highlighted_keys(runtime, element) {
 
-    var lesson_id = $('textarea').attr('id')
+    var lesson_id = $('.add-paragraph input').attr('id')
     var handlerUrla = runtime.handlerUrl(element, 'update_highlighted_keys');
     $.ajax({
         type: "POST",
@@ -68,17 +67,22 @@ function update_highlighted_keys(runtime, element) {
         dataType: "json",
         success: function(result) {
 
-            $('textarea.para-textarea').val(result.paragraph);
-            var text = $('textarea').val();
-            $('.updated-para').html(text);
+/*            $('textarea.para-textarea').val(result.paragraph);
+            var text = $('textarea').val();*/
+            $('.new-para').html(result.paragraph);
 
             var dividedword = divide_paragraph_inwords(runtime, element);
             $.when(dividedword).done(function() {
-
                 var keys = result.keys
                 for (i = 0; i < keys.length; i++) {
                     var key = keys[i].keyword.toLowerCase();
+                    var def = keys[i].defination
                     $("[key-word='" + key + "']").css("color", "red");
+                    $("[key-word='" + key + "']").attr('title',def);
+                    $("[key-word='" + key + "']").tooltipster({
+                                                       theme: 'tooltipster-punk'
+
+                        });
                 }
             });
         },
@@ -91,13 +95,15 @@ function update_highlighted_keys(runtime, element) {
 
 
 function EditParagraphXBlock(runtime, element) {
-
+    localStorage.clear();
     update_highlighted_keys(runtime, element);
     $(function($) {
         $('.submit', element).click(function(eventObject) {
             eventObject.preventDefault();
             var text = $('textarea').val();
+            console.log("text==>", text);
             var lesson_id = $('textarea').attr('id')
+            console.log("lid==>", lesson_id);
             var handlerUrlb = runtime.handlerUrl(element, 'post_paragraph');
 
             $.ajax({
@@ -106,14 +112,20 @@ function EditParagraphXBlock(runtime, element) {
                 data: JSON.stringify({"lesson_id": lesson_id, "paragraph": text }),
                 dataType: "json",
                 success: function(result) {
+                    console.log("result==>",result)
                     if(result.result == "fail")
                     {
                         alert("plz add paragraph")
                     }
                     else
                     {
-                        $('.show-paragraph .updated-para').text(result.new_para);   
+                        $('.show-para .new-para').text(result.new_para);   
+
+                        var url =  "/scenario/paragraphxblock.0/?lesson_id=" + lesson_id
+                        console.log("url===>",url)
+                        window.location.href = url; 
                         update_highlighted_keys(runtime, element);
+
                     }
                 },
                 error: function(err) {
@@ -126,9 +138,11 @@ function EditParagraphXBlock(runtime, element) {
         $('#submit-key', element).click(function(eventObject) {
             eventObject.preventDefault();
             var key = $('#keyword').val();
+            console.log("key==>",key);
             var def = $.trim($('#defination').val());
+            console.log("def==>",def);
             var modal = document.getElementById('myModal');
-            var lesson_id = $('textarea').attr('id')
+            var lesson_id = $('.add-paragraph input').attr('id')
             var handlerUrld = runtime.handlerUrl(element, 'post_keyword');
             
             if (def) {
@@ -139,9 +153,18 @@ function EditParagraphXBlock(runtime, element) {
                     data: JSON.stringify({ "lesson_id": lesson_id, "keyword": key, "defination": def }),
                     dataType: "json",
                     success: function(result) {
+                        console.log("result==>", result)
                         modal.style.display = "none";
                         var key = result.keyword.toLowerCase();
+                        var def = result.defination
+                        console.log("def",def)
                         $("[key-word='" + key + "']").css("color", "red");
+                        $("[id='" + key + "']").attr('title',def);
+
+                       /* $("#"+key+"").attr('title',def);*/
+
+                      /*  $('#'+ i +'').attr('title', 'your new title');*/
+
                     },
                     error: function(err) {
                         console.log(err)
@@ -152,6 +175,16 @@ function EditParagraphXBlock(runtime, element) {
                 alert("plz fill the defination");
             }
         });
+
+        $(".edit-para").click(function(event) {
+            event.preventDefault();
+            var para_id = $('.add-paragraph input').attr('id')
+            console.log("para_id==>", para_id)
+            var url =  "/scenario/paragraphxblock.0/?para_id=" + para_id
+            console.log("url===>",url)
+            window.location.href = url;  
+        });
+
+
     }(jQuery));
 }
-

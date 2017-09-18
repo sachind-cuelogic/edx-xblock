@@ -62,6 +62,11 @@ class ParagraphXBlock(XBlock):
         fragment.add_css(self.resource_string("static/css/paragraphxblock.css"))
         fragment.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
         fragment.add_javascript(self.resource_string("static/js/src/add_paragraph.js"))
+        
+        fragment.add_css(self.resource_string("static/css/tooltipster.bundle.min.css"))
+        fragment.add_css(self.resource_string("static/css/tooltipster-sideTip-punk.min.css"))
+        fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
+        fragment.add_javascript(self.resource_string("static/js/src/tooltipster.bundle.min.js"))
         fragment.initialize_js('ParagraphXBlock')
         return fragment
 
@@ -80,8 +85,13 @@ class ParagraphXBlock(XBlock):
             }
             fragment = Fragment(loader.render_template("static/html/paraedit.html", context))
             fragment.add_css(self.resource_string("static/css/paraedit.css"))
-            # fragment.add_javascript(self.resource_string("static/js/src/popup.js"))
+            # fragment.add_javascript(self.resource_string("static/js/src/tooltipster-SVG.js"))
+
+            # fragment.add_css(self.resource_string("static/css/tooltipster-sideTip-noir.min.css"))
+            fragment.add_css(self.resource_string("static/css/tooltipster.bundle.min.css"))
+            fragment.add_css(self.resource_string("static/css/tooltipster-sideTip-punk.min.css"))
             fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/tooltipster.bundle.min.js"))
             fragment.add_javascript(self.resource_string("static/js/src/paraedit.js"))
             fragment.initialize_js('EditParagraphXBlock')  
 
@@ -102,6 +112,25 @@ class ParagraphXBlock(XBlock):
             fragment.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
             fragment.initialize_js('ParagraphXBlock')
 
+        elif context['para_id']:
+            paragraph = Lessons.objects.get(id=context['para_id'])
+            context = {
+            'paragraph': paragraph,
+            'scenario_id': context['scenario_id'],
+            'view':  context['view'] 
+            }
+            fragment = Fragment(loader.render_template("static/html/paragraph_edit.html", context))
+            fragment.add_css(self.resource_string("static/css/paraedit.css"))
+            # fragment.add_javascript(self.resource_string("static/js/src/tooltipster-SVG.js"))
+
+            fragment.add_css(self.resource_string("static/css/tooltipster-sideTip-punk.min.css"))
+            fragment.add_css(self.resource_string("static/css/tooltipster.bundle.min.css"))
+            # fragment.add_css(self.resource_string("static/css/tooltipster-sideTip-noir.min.css"))
+            fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/tooltipster.bundle.min.js"))
+            fragment.add_javascript(self.resource_string("static/js/src/paraedit.js"))
+            fragment.initialize_js('EditParagraphXBlock')              
+
         else : 
             course_list = Course.objects.all()
             context = {
@@ -110,10 +139,10 @@ class ParagraphXBlock(XBlock):
             }
             fragment = Fragment(loader.render_template("static/html/paragraphxblock.html", context))
             fragment.add_css(self.resource_string("static/css/paragraphxblock.css"))
-            fragment.add_css(self.resource_string("static/css/bootstrap.min.css"))
+            # fragment.add_css(self.resource_string("static/css/bootstrap.min.css"))
             fragment.add_javascript(self.resource_string("static/js/src/paragraphxblock.js"))
-            fragment.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
-            fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
+            # fragment.add_javascript(self.resource_string("static/js/src/bootstrap.min.js"))
+            # fragment.add_javascript(self.resource_string("static/js/src/jquery.min.js"))
             fragment.initialize_js('ParagraphXBlock')
         
         return fragment 
@@ -153,7 +182,7 @@ class ParagraphXBlock(XBlock):
 
     @XBlock.json_handler
     def post_keyword(self, data, suffix=''):
-
+        # import pdb; pdb.set_trace()
         lesson  = Lessons.objects.get(pk=data["lesson_id"])  
         try:
             key = KeyDefinition.objects.get(lesson=lesson, keyword=data["keyword"].lower())
@@ -164,7 +193,7 @@ class ParagraphXBlock(XBlock):
                                 keyword=data["keyword"].lower(), 
                                 defination=data["defination"])
         key.save()
-        return {"keyword":data["keyword"]}
+        return {"keyword":data["keyword"], "defination":key.defination}
 
 
     @XBlock.json_handler
@@ -176,6 +205,7 @@ class ParagraphXBlock(XBlock):
         for i in keywords:
             key           = {}
             key["keyword"]= i.keyword
+            key["defination"] = i.defination
             keys.append(key)
         return {"paragraph":paragraph.paragraph,"keys":keys}
 
@@ -196,6 +226,7 @@ class ParagraphXBlock(XBlock):
         paragraphs              = {}
         paragraphs["paragraph"] = para.paragraph
         return {"paragraph":paragraphs,"keys":keys} 
+
 
 
     @staticmethod

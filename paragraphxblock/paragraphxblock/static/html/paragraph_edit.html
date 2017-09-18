@@ -1,0 +1,17 @@
+<div class="add-paragraph">
+	<h1> Lesson : {{paragraph.lesson_name}}</h1>
+	<input type="hidden" id="{{paragraph.id}}" value="" name="">
+<div class="hide-para">
+<h2>Add Paragraph for {{paragraph.lesson_name}} lesson</h2>
+<div class="paragraph">
+	<textarea id="{{paragraph.id}}" class="para-textarea" rows="20" cols="100" placeholder="Add paragraph...">{{paragraph.paragraph}}</textarea>
+</div>
+<div class="action-btn">
+<!-- 	<a id="{{pt.id}}" class="submit btn-success submit-btn" href="/scenario/paragraphxblock.0/{{paragraph.id}}/?lesson_id={{paragraph.id}}"><strong> Save</strong></a> -->
+	<button class="submit btn-success submit-btn">save</button>
+	<input type="button" class="cancel btn-success" value="Cancel"/>
+</div>
+</div>
+
+
+</div>
